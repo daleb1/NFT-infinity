@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/Proxima\ Nova\ Font.otf);
+ }
+@font-face {
+ font-family: 'Pilat Extended Bold';
+ src: url(./fonts/PilatExtended-Bold.ttf);
+ 
+}
+@font-face {
+ font-family: 'Pilat Extended Book';
+ src: url(./fonts/PilatExtended-Book.ttf);
+}
+
+* {
+ font-family: Proxima Nova;
+}
