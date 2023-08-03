@@ -11,6 +11,11 @@ module.exports = {
           background: "#FFFFFF",
         },
       },
+      fontFamily: {
+        proxima: ['Proxima Nova','sans-serif'],
+        pilbook: 'Pilat Extended Book',
+        pilbold: 'Pilat Extended Bold',
+      },
     },
   },
   plugins: [],
