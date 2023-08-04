@@ -6,8 +6,10 @@
                 <span class="text-sm font-semibold tracking-tight text-gray-900">Explore more</span>
             </button>
         </div>
+        <%- include('../../components/toggle-selection'); %>
         <div
-            class="mx-auto mt-20 flex justify-around max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8">
+            class="mx-auto mt-10 flex flex-wrap justify-around max-w-2xl grid-cols-3 gap-6 sm:grid-cols-3 xl:mx-0 xl:max-w-none xl:grid-cols-3 xl:gap-8">
+            
             <%- include('../../components/atom/card-2'); %> 
             <%- include('../../components/atom/card-2'); %> 
             <%- include('../../components/atom/card-2'); %>
