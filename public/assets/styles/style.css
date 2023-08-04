@@ -815,6 +815,10 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -1725,6 +1729,10 @@ select {
 .text-nft-gold-primary {
   --tw-text-opacity: 1;
   color: rgb(255 215 0 / var(--tw-text-opacity));
+}
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 .opacity-30 {
   opacity: 0.3;
