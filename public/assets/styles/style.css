@@ -572,6 +572,15 @@ video {
 .top-full {
   top: 100%;
 }
+.left-\[238px\] {
+  left: 238px;
+}
+.left-\[86px\] {
+  left: 86px;
+}
+.top-\[147px\] {
+  top: 147px;
+}
 .z-10 {
   z-index: 10;
 }
@@ -622,6 +631,12 @@ video {
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-\[450px\] {
+  margin-top: 450px;
 }
 .box-border {
   box-sizing: border-box;
@@ -685,6 +700,12 @@ video {
 }
 .h-\[46px\] {
   height: 46px;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-\[201px\] {
+  height: 201px;
 }
 .w-10 {
   width: 2.5rem;
@@ -752,6 +773,15 @@ video {
 .w-full {
   width: 100%;
 }
+.w-\[129px\] {
+  width: 129px;
+}
+.w-\[269px\] {
+  width: 269px;
+}
+.w-\[301px\] {
+  width: 301px;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -760,6 +790,9 @@ video {
 }
 .max-w-7xl {
   max-width: 80rem;
+}
+.max-w-\[1046px\] {
+  max-width: 1046px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -801,6 +834,9 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.justify-around {
+  justify-content: space-around;
+}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -830,6 +866,9 @@ video {
 }
 .gap-\[8px\] {
   gap: 8px;
+}
+.gap-\[11px\] {
+  gap: 11px;
 }
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
@@ -943,6 +982,9 @@ video {
 }
 .bg-gradient-to-tr {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+.bg-\[url\(\.\.\/\.\.\/assets\/images\/image-thumbnail\/card2-image-thumbnail\.png\)\] {
+  background-image: url(../../assets/images/image-thumbnail/card2-image-thumbnail.png);
 }
 .from-nft-gold-primary {
   --tw-gradient-from: #FFD700 var(--tw-gradient-from-position);
@@ -1118,6 +1160,12 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pl-24 {
+  padding-left: 6rem;
 }
 .text-center {
   text-align: center;
