@@ -861,6 +861,9 @@ select {
 .ml-20 {
   margin-left: 5rem;
 }
+.mt-0 {
+  margin-top: 0px;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -953,6 +956,9 @@ select {
 }
 .h-12 {
   height: 3rem;
+}
+.h-2 {
+  height: 0.5rem;
 }
 .max-h-full {
   max-height: 100%;
@@ -1049,6 +1055,9 @@ select {
 }
 .w-\[36\.125rem\] {
   width: 36.125rem;
+}
+.w-2 {
+  width: 0.5rem;
 }
 .min-w-0 {
   min-width: 0px;
