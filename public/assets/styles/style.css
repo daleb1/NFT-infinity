@@ -557,8 +557,14 @@ video {
 .left-\[175px\] {
   left: 175px;
 }
+.left-\[238px\] {
+  left: 238px;
+}
 .left-\[579px\] {
   left: 579px;
+}
+.left-\[86px\] {
+  left: 86px;
 }
 .right-0 {
   right: 0px;
@@ -566,20 +572,14 @@ video {
 .top-\[12px\] {
   top: 12px;
 }
+.top-\[147px\] {
+  top: 147px;
+}
 .top-\[85px\] {
   top: 85px;
 }
 .top-full {
   top: 100%;
-}
-.left-\[238px\] {
-  left: 238px;
-}
-.left-\[86px\] {
-  left: 86px;
-}
-.top-\[147px\] {
-  top: 147px;
 }
 .z-10 {
   z-index: 10;
@@ -611,9 +611,6 @@ video {
 .mb-8 {
   margin-bottom: 2rem;
 }
-.mt-16 {
-  margin-top: 4rem;
-}
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -623,6 +620,9 @@ video {
 .mt-3 {
   margin-top: 0.75rem;
 }
+.mt-4 {
+  margin-top: 1rem;
+}
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -631,12 +631,6 @@ video {
 }
 .mt-8 {
   margin-top: 2rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.mt-\[450px\] {
-  margin-top: 450px;
 }
 .box-border {
   box-sizing: border-box;
@@ -665,6 +659,9 @@ video {
 .h-14 {
   height: 3.5rem;
 }
+.h-20 {
+  height: 5rem;
+}
 .h-5 {
   height: 1.25rem;
 }
@@ -692,6 +689,9 @@ video {
 .h-\[18px\] {
   height: 18px;
 }
+.h-\[201px\] {
+  height: 201px;
+}
 .h-\[30px\] {
   height: 30px;
 }
@@ -700,12 +700,6 @@ video {
 }
 .h-\[46px\] {
   height: 46px;
-}
-.h-20 {
-  height: 5rem;
-}
-.h-\[201px\] {
-  height: 201px;
 }
 .w-10 {
   width: 2.5rem;
@@ -740,6 +734,9 @@ video {
 .w-\[1046px\] {
   width: 1046px;
 }
+.w-\[129px\] {
+  width: 129px;
+}
 .w-\[15px\] {
   width: 15px;
 }
@@ -758,6 +755,12 @@ video {
 .w-\[244px\] {
   width: 244px;
 }
+.w-\[269px\] {
+  width: 269px;
+}
+.w-\[301px\] {
+  width: 301px;
+}
 .w-\[45px\] {
   width: 45px;
 }
@@ -772,15 +775,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-\[129px\] {
-  width: 129px;
-}
-.w-\[269px\] {
-  width: 269px;
-}
-.w-\[301px\] {
-  width: 301px;
 }
 .min-w-0 {
   min-width: 0px;
@@ -852,6 +846,9 @@ video {
 .gap-8 {
   gap: 2rem;
 }
+.gap-\[11px\] {
+  gap: 11px;
+}
 .gap-\[16px\] {
   gap: 16px;
 }
@@ -866,9 +863,6 @@ video {
 }
 .gap-\[8px\] {
   gap: 8px;
-}
-.gap-\[11px\] {
-  gap: 11px;
 }
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
@@ -974,6 +968,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-\[url\(\.\.\/\.\.\/assets\/images\/image-thumbnail\/card2-image-thumbnail\.png\)\] {
+  background-image: url(../../assets/images/image-thumbnail/card2-image-thumbnail.png);
+}
 .bg-\[url\(\/public\/frame-18\@3x\.png\)\] {
   background-image: url(/public/frame-18@3x.png);
 }
@@ -982,9 +979,6 @@ video {
 }
 .bg-gradient-to-tr {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
-}
-.bg-\[url\(\.\.\/\.\.\/assets\/images\/image-thumbnail\/card2-image-thumbnail\.png\)\] {
-  background-image: url(../../assets/images/image-thumbnail/card2-image-thumbnail.png);
 }
 .from-nft-gold-primary {
   --tw-gradient-from: #FFD700 var(--tw-gradient-from-position);
@@ -1100,6 +1094,10 @@ video {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1124,9 +1122,8 @@ video {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.pb-4 {
+  padding-bottom: 1rem;
 }
 .pb-6 {
   padding-bottom: 1.5rem;
@@ -1139,6 +1136,9 @@ video {
 }
 .pl-10 {
   padding-left: 2.5rem;
+}
+.pl-24 {
+  padding-left: 6rem;
 }
 .pl-3 {
   padding-left: 0.75rem;
@@ -1160,12 +1160,6 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
-}
-.pl-24 {
-  padding-left: 6rem;
 }
 .text-center {
   text-align: center;
@@ -1207,9 +1201,6 @@ video {
 }
 .leading-none {
   line-height: 1;
-}
-.leading-8 {
-  line-height: 2rem;
 }
 .tracking-tight {
   letter-spacing: -0.025em;
@@ -1399,11 +1390,6 @@ video {
     padding-bottom: 2.5rem;
   }
 
-  .sm\:py-32 {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-
   .sm\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1412,6 +1398,11 @@ video {
   .sm\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .sm\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 
   .sm\:text-4xl {
