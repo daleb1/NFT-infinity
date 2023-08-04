@@ -762,6 +762,9 @@ select {
 .-m-2\.5 {
   margin: -0.625rem;
 }
+.m-auto {
+  margin: auto;
+}
 .-mx-3 {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
@@ -978,6 +981,9 @@ select {
 .max-w-screen-xl {
   max-width: 1280px;
 }
+.max-w-screen-2xl {
+  max-width: 1536px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1008,6 +1014,9 @@ select {
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.content-center {
+  align-content: center;
 }
 .items-start {
   align-items: flex-start;
@@ -1876,6 +1885,11 @@ select {
     margin-right: 2.5rem;
   }
 
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .lg\:mt-8 {
     margin-top: 2rem;
   }
@@ -1898,6 +1912,10 @@ select {
 
   .lg\:max-w-none {
     max-width: none;
+  }
+
+  .lg\:max-w-xl {
+    max-width: 36rem;
   }
 
   .lg\:flex-auto {
@@ -1963,6 +1981,11 @@ select {
     margin-right: 0px;
   }
 
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .xl\:max-w-none {
     max-width: none;
   }
@@ -1973,6 +1996,10 @@ select {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:items-center {
+    align-items: center;
   }
 
   .xl\:gap-12 {
@@ -1996,6 +2023,10 @@ select {
   .xl\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .xl\:text-center {
+    text-align: center;
   }
 }
 
