@@ -1,13 +1,4 @@
-<header
-  class="bg-gradient-to-tr from-nft-gold-primary via-transparent to-white"
-  style="
-    background-image: linear-gradient(
-      145deg,
-      rgba(255, 215, 0, 1) 0%,
-      rgba(255, 215, 0, 0) 57%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  ">
+<header x-data="{ open: false }">
   <nav
     class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
     aria-label="Global">
@@ -15,7 +6,7 @@
       <span class="sr-only">NFT-Infinity</span>
       <img
         class="h-20 w-auto"
-        src="../../assets/images/logo-shadow-black.png"
+        src="../../assets/images/logo-shadow-yellow.png"
         alt="NFT-Infinity Logo" />
     </a>
     <div class="min-w-0 md:px-8 lg:px-0 xl:col-span-6">
@@ -50,6 +41,7 @@
 
     <div class="flex lg:hidden">
       <button
+        @click="open = true"
         type="button"
         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open main menu</span>
@@ -255,20 +247,23 @@
   </nav>
 
   <!-- Mobile menu, show/hide based on menu open state. -->
-  <div class="lg:hidden" role="dialog" aria-modal="true">
+  <div x-show="open" class="lg:hidden z-50" role="dialog" aria-modal="true">
     <!-- Background backdrop, show/hide based on slide-over state. -->
     <div class="fixed inset-0 z-10"></div>
     <div
-      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white text-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="flex items-center justify-between">
         <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
+          <span class="sr-only">NFT-Infinity</span>
           <img
             class="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt="" />
+            src="../../assets/images/logo-shadow-black.png"
+            alt="NFT-Infinity Logo" />
         </a>
-        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+        <button
+          @click="open = false"
+          type="button"
+          class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
           <svg
             class="h-6 w-6"
@@ -287,13 +282,14 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <div class="-mx-3">
+            <div x-data="{ open: false }" class="-mx-3">
               <button
+                @click="open = true"
                 type="button"
                 class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 aria-controls="disclosure-2"
                 aria-expanded="false">
-                Home
+                Marketplace
                 <!-- Expand/collapse icon, toggle classes based on menu open state. Open: "rotate-180", Closed: "" -->
                 <svg
                   class="h-5 w-5 flex-none"
@@ -307,22 +303,33 @@
                 </svg>
               </button>
               <!-- 'Company' sub-menu, show/hide based on menu state. -->
-              <div class="mt-2 space-y-2" id="disclosure-2">
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="mt-2 space-y-2"
+                id="disclosure-2">
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >About us</a
+                  >Buy NFT</a
                 >
 
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Careers</a
+                  >Sell NFT</a
+                >
+
+                <a
+                  href="#"
+                  class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Auctions</a
                 >
               </div>
             </div>
-            <div class="-mx-3">
+            <div x-data="{ open: false }" class="-mx-3">
               <button
+                @click="open = true"
                 type="button"
                 class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 aria-controls="disclosure-2"
@@ -341,27 +348,38 @@
                 </svg>
               </button>
               <!-- 'Company' sub-menu, show/hide based on menu state. -->
-              <div class="mt-2 space-y-2" id="disclosure-2">
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="mt-2 space-y-2"
+                id="disclosure-2">
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >About us</a
+                  >Today's Pick</a
                 >
 
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Careers</a
+                  >Popular Collections</a
+                >
+
+                <a
+                  href="#"
+                  class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >New Arrival</a
                 >
               </div>
             </div>
-            <div class="-mx-3">
+            <div x-data="{ open: false }" class="-mx-3">
               <button
+                @click="open = true"
                 type="button"
                 class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 aria-controls="disclosure-2"
                 aria-expanded="false">
-                Pages
+                Creators
                 <!-- Expand/collapse icon, toggle classes based on menu open state. Open: "rotate-180", Closed: "" -->
                 <svg
                   class="h-5 w-5 flex-none"
@@ -375,27 +393,38 @@
                 </svg>
               </button>
               <!-- 'Company' sub-menu, show/hide based on menu state. -->
-              <div class="mt-2 space-y-2" id="disclosure-2">
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="mt-2 space-y-2"
+                id="disclosure-2">
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >About us</a
+                  >Create NFT</a
                 >
 
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Careers</a
+                  >My Creations</a
+                >
+
+                <a
+                  href="#"
+                  class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Royalties</a
                 >
               </div>
             </div>
-            <div class="-mx-3">
+            <div x-data="{ open: false }" class="-mx-3">
               <button
+                @click="open = true"
                 type="button"
                 class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 aria-controls="disclosure-2"
                 aria-expanded="false">
-                Community
+                About
                 <!-- Expand/collapse icon, toggle classes based on menu open state. Open: "rotate-180", Closed: "" -->
                 <svg
                   class="h-5 w-5 flex-none"
@@ -409,33 +438,40 @@
                 </svg>
               </button>
               <!-- 'Company' sub-menu, show/hide based on menu state. -->
-              <div class="mt-2 space-y-2" id="disclosure-2">
+              <div
+                x-show="open"
+                @click.away="open = false"
+                class="mt-2 space-y-2"
+                id="disclosure-2">
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >About us</a
+                  >My Wallet</a
                 >
 
                 <a
                   href="#"
                   class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Careers</a
+                  >Profile</a
+                >
+
+                <a
+                  href="#"
+                  class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Settings</a
+                >
+
+                <a
+                  href="#"
+                  class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Logout</a
                 >
               </div>
             </div>
             <div class="-mx-3">
               <button
                 type="button"
-                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
-                aria-controls="disclosure-2"
-                aria-expanded="false">
-                Contacts
-              </button>
-            </div>
-            <div class="-mx-3">
-              <button
-                type="button"
-                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
+                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white px-4 shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                 aria-controls="disclosure-2"
                 aria-expanded="false">
                 Connect Wallet
