@@ -1111,6 +1111,9 @@ select {
 .flex-wrap {
   flex-wrap: wrap;
 }
+.content-start {
+  align-content: flex-start;
+}
 .items-start {
   align-items: flex-start;
 }
@@ -1364,6 +1367,9 @@ select {
 }
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
+}
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
 }
 .bg-\[url\(\.\.\/\.\.\/assets\/images\/image-thumbnail\/card2-image-thumbnail\.png\)\] {
   background-image: url(../../assets/images/image-thumbnail/card2-image-thumbnail.png);
@@ -1722,6 +1728,12 @@ select {
 }
 .opacity-30 {
   opacity: 0.3;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+.bg-blend-overlay {
+  background-blend-mode: overlay;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
