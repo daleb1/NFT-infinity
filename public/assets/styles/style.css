@@ -1409,6 +1409,9 @@ select {
 .text-right {
   text-align: right;
 }
+.align-middle {
+  vertical-align: middle;
+}
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
