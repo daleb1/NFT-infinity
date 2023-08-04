@@ -1,2 +1,358 @@
-<% title = "Explore" %>
-<h1 class="text-black bg-nft-gold-primary">Explore Page</h1>
+<% title="Explore" %>
+<section>
+  <!-- Temporary Section for now-->
+  <%- include('../../components/molecule/box-search-section'); %>
+  <!-- NFT Items List & Sort Section-->
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <div class="mt-8 block lg:hidden">
+      <button
+        class="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
+        <span class="text-sm font-medium"> Filters & Sorting </span>
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="h-4 w-4 rtl:rotate-180">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="mt-4 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
+      <div class="hidden space-y-4 lg:block">
+        <div>
+          <label for="SortBy" class="block text-lg font-bold text-black">
+            Sort By
+          </label>
+        </div>
+
+        <div>
+          <p class="block text-xs font-medium text-gray-700">Filters</p>
+
+          <div class="mt-1 space-y-2">
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition">
+                <span class="text-sm font-medium"> Categories </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <ul class="space-y-1 border-t border-gray-200 p-4">
+                  <li>
+                    <label for="FilterInStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterInStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Buy Now
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterPreOrder" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterPreOrder" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        On Auctions
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Has Offer
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition">
+                <span class="text-sm font-medium"> Categories </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <ul class="space-y-1 border-t border-gray-200 p-4">
+                  <li>
+                    <label for="FilterInStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterInStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Art
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterPreOrder" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterPreOrder" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Music
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Domain Names
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Virtual Cards
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Trading Cards
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Collectibles
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Sports
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Utility
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition">
+                <span class="text-sm font-medium"> Chains </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <ul class="space-y-1 border-t border-gray-200 p-4">
+                  <li>
+                    <label for="FilterInStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterInStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Etherium
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterPreOrder" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterPreOrder" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Polygon
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Klayt
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition">
+                <span class="text-sm font-medium"> Collections </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <ul class="space-y-1 border-t border-gray-200 p-4">
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Abstraction
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Patternlicious
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Sketchify
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Cartoonism
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Virtuland
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label for="FilterOutOfStock" class="inline-flex items-center gap-2">
+                      <input type="checkbox" id="FilterOutOfStock" class="h-5 w-5 rounded border-gray-300" />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Papercut
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3">
+        <ul class="grid gap-20 sm:grid-cols-2 md:grid-cols-3 md:flex-grow md:gap-x-10 lg:flex-wrap lg:grid-cols-3">
+          
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group block overflow-hidden">
+              <%- include('../../components/atom/card-2'); %>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
