@@ -2457,6 +2457,9 @@ select {
 .pr-10 {
   padding-right: 2.5rem;
 }
+.pt-24 {
+  padding-top: 6rem;
+}
 .text-left {
   text-align: left;
 }
@@ -3210,6 +3213,10 @@ select {
 
   .sm\:pt-3 {
     padding-top: 0.75rem;
+  }
+
+  .sm\:pt-32 {
+    padding-top: 8rem;
   }
 
   .sm\:text-4xl {
