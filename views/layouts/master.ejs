@@ -38,6 +38,14 @@
           el: ".swiper-scrollbar",
         },
       });
+
+      const button = document.getElementById("myButton");
+      let count = 100;
+
+      button.addEventListener("click", () => {
+        count = count === 100 ? 101 : 100;
+        button.textContent = count;
+      });
     </script>
   </body>
 </html>
