@@ -1465,6 +1465,9 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.text-clip {
+  text-overflow: clip;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1908,6 +1911,12 @@ select {
 }
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-end {
+  text-align: end;
 }
 .align-middle {
   vertical-align: middle;
