@@ -2,7 +2,7 @@
   <nav 
     class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
     aria-label="Global">
-    <a href="#" class="-m-1.5 p-1.5">
+    <a href="/" class="-m-1.5 p-1.5">
       <span class="sr-only">NFT-Infinity</span>
       <img
         class="h-20 w-auto"
@@ -60,9 +60,10 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-6">
-      <div x-data="{ open: false }" class="relative">
+      <div x-data="{ open: false, timeout: null }" class="relative">
         <button
           @mouseenter="open = true"
+          @mouseleave="timeout = setTimeout(() => open = false, 100)"
           type="button"
           class="hover flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
           aria-expanded="false">
@@ -80,20 +81,21 @@
         </button>
         <div
           x-show="open"
-          @mouseout.away="open = false"
+          @mouseenter="clearTimeout(timeout); open = true"
+          @mouseleave="timeout = setTimeout(() => open = false, 100)"
           class="absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5">
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Buy NFT</a
           >
-
+    
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Sell NFT</a
           >
-
+    
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
@@ -103,40 +105,44 @@
       </div>
     </div>
     <div class="hidden lg:flex lg:gap-x-6">
-      <div x-data="{ open: false }" class="relative">
-        <button
-          @mouseenter="open = true"
-          type="button"
-          class="flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
-          aria-expanded="false">
-          Explore
-          <svg
-            class="h-5 w-5 flex-none text-nft-gold-primary"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
+      <div x-data="{ open: false, timeout: null }" class="relative">
+        <a href="/explore">
+          <button
+            @mouseenter="open = true"
+            @mouseleave="timeout = setTimeout(() => open = false, 100)"
+            type="button"
+            class="hover flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
+            aria-expanded="false">
+            Explore
+            <svg
+              class="h-5 w-5 flex-none text-nft-gold-primary"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </a>
         <div
           x-show="open"
-          @mouseout.away="open = false"
+          @mouseenter="clearTimeout(timeout); open = true"
+          @mouseleave="timeout = setTimeout(() => open = false, 100)"
           class="absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5">
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Today's Pick</a
           >
-
+    
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-            >Popular Collections</a
+            >Popular Collection</a
           >
-
+    
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
@@ -146,42 +152,46 @@
       </div>
     </div>
     <div class="hidden lg:flex lg:gap-x-6">
-      <div x-data="{ open: false }" class="relative">
-        <button
-          @mouseenter="open = true"
-          type="button"
-          class="flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
-          aria-expanded="false">
-          Creators
-          <svg
-            class="h-5 w-5 flex-none text-nft-gold-primary"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
+      <div x-data="{ open: false, timeout: null }" class="relative">
+        <a href="/authors">
+          <button
+            @mouseenter="open = true"
+            @mouseleave="timeout = setTimeout(() => open = false, 100)"
+            type="button"
+            class="hover flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
+            aria-expanded="false">
+            Creators
+            <svg
+              class="h-5 w-5 flex-none text-nft-gold-primary"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </a>
         <div
           x-show="open"
-          @mouseout.away="open = false"
+          @mouseenter="clearTimeout(timeout); open = true"
+          @mouseleave="timeout = setTimeout(() => open = false, 100)"
           class="absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5">
           <a
-            href="#"
+            href="/create-item"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Create NFT</a
           >
-
+    
           <a
-            href="#"
+            href="/profile"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >My Creations</a
           >
-
+    
           <a
-            href="#"
+            href="/profile"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Royalties</a
           >
@@ -189,40 +199,44 @@
       </div>
     </div>
     <div class="hidden lg:flex lg:gap-x-6">
-      <div x-data="{ open: false }" class="relative">
-        <button
-          @mouseenter="open = true"
-          type="button"
-          class="flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
-          aria-expanded="false">
-          Account
-          <svg
-            class="h-5 w-5 flex-none text-nft-gold-primary"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
+      <div x-data="{ open: false, timeout: null }" class="relative">
+        <a href="/profile">
+          <button
+            @mouseenter="open = true"
+            @mouseleave="timeout = setTimeout(() => open = false, 100)"
+            type="button"
+            class="hover flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
+            aria-expanded="false">
+            Account
+            <svg
+              class="h-5 w-5 flex-none text-nft-gold-primary"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </a>
         <div
           x-show="open"
-          @mouseout.away="open = false"
+          @mouseenter="clearTimeout(timeout); open = true"
+          @mouseleave="timeout = setTimeout(() => open = false, 100)"
           class="absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5">
           <a
-            href="#"
+            href="/wallet"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >My Wallet</a
           >
-
+    
           <a
-            href="#"
+            href="/profile"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Profile</a
           >
-
+    
           <a
             href="#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
