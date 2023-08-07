@@ -1,13 +1,12 @@
-<div class="">
-  <video
-    class="min-w-full min-h-full absolute object-cover -z-50 blur-sm backdrop-blur-0"
+<div class="relative h-screen">
+  <video 
+    class="absolute top-0 left-0 h-full w-full object-cover blur-0 backdrop-blur-0 "
     src="../assets/videos/video.mp4"
     type="video/mp4"
     autoplay
     muted
     loop></video>
-  <%- include('../../partials/shared/header.ejs'); %>
-  <div class="relative isolate px-6 lg:px-8">
+  <div class="relative isolate px-6 lg:px-8 top-40">
     <div class="mx-auto max-w-7xl py-10 sm:py-10 lg:py-36">
       <div class="hidden sm:mb-8 sm:grid">
         <p class="uppercase text-nft-gold-primary font-semibold ml-20">
@@ -27,11 +26,11 @@
       <div class="text-center ml-20">
         <div class="mt-10 flex items-center justify-start gap-x-6">
           <button
-            class="border-2 border-nft-gold-primary hover:bg-nft-gold-primary text-white hover:text-black font-semibold px-4 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            class="border-2 border-nft-gold-primary hover:bg-nft-gold-primary text-white hover:text-black font-black px-12 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
             Create
           </button>
           <button
-            class="border-2 border-nft-gold-primary hover:bg-nft-gold-primary text-white hover:text-black font-semibold px-4 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            class="border-2 border-nft-gold-primary hover:bg-nft-gold-primary text-white hover:text-black font-black px-12 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
             Explore
           </button>
         </div>
