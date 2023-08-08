@@ -1,2 +1,55 @@
 <% title = "Profile Information" %>
-<h1 class="text-black bg-nft-gold-primary">Profile Information</h1>
+<div class="bg-gray-900 pt-24 sm:pt-32 pb-4"></div>
+<div class="mt-10 relative bg-white w-full h-[1314px] text-left text-13xl text-black font-body-reg-text">
+  <div class="absolute left-[197px] w-[1046px] h-[285px] text-base text-black">
+    <div class="bg-gray-500 absolute top-[228px] left-[0px] rounded-t-none rounded-b-3xs bg-white-dark w-[1046px] h-[57px]">
+      <div class="absolute top-[13px] left-[307px] w-[661px] flex flex-row items-center justify-between">
+        <button class="bg-gray-500 text-white hover:text-black font-black px-12 py-2 rounded-none">All</button>
+        <button class="bg-gray-500 text-white hover:text-black font-black px-12 py-2 rounded-none">Art</button>
+        <button class="bg-gray-500 text-white hover:text-black font-black px-12 py-2 rounded-none">Music</button>
+        <button class="bg-gray-500 text-white hover:text-black font-black px-12 py-2 rounded-none">Collectibles</button>
+        <button class="bg-gray-500 text-white hover:text-black font-black px-12 py-2 rounded-none">Sports</button>
+      </div>
+    </div>
+    <div
+      class="absolute top-[0px] left-[0px] rounded-t-3xs rounded-b-none w-[1046px] h-[228px] bg-[url(../../assets/images/image-thumbnail/bwgalaxy.jpg)] bg-cover bg-no-repeat bg-[top] text-xs text-white">
+      <a href="../../assets/images/profile-thumbnail/dale.png">
+        <img
+          class="rounded-lg border-2 border-white absolute top-[64px] left-[32px] rounded-3xs w-[197px] h-[197px] object-cover"
+          alt=""
+          src="../../assets/images/profile-thumbnail/dale.png" />
+      </a>
+      <b class="absolute top-[63px] left-[253px] text-2xl font-heading-heading-3">Dale</b>
+      <div class="absolute top-[117px] left-[253px] inline-block w-[397px] font-bold text-sm">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores
+        sit.
+      </div>
+      <div class="absolute top-[161px] left-[253px] rounded-xl bg-white-dark w-[196px] h-9 text-gray">
+        <button
+          class="border-2 border-nft-gold-primary bg-nft-gold-primary text-white hover:text-black font-black px-12 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+          DdzFFzCqrhshMSxABCdfr...
+        </button>
+      </div>
+      <div
+        class="rounded-lg font-semibold absolute top-[29px] left-[924px] rounded-31xl box-border h-[34px] flex flex-row py-[13px] px-5 items-center justify-center text-secondary border-[0.5px] border-solid border-secondary hover:bg-nft-gold-primary hover:text-black">
+        <button class="relative">Follow</button>
+      </div>
+    </div>
+  </div>
+  <div class="absolute top-[320px] left-[197px] flex flex-col items-center justify-start gap-[32px] text-xs">
+    <div class="flex flex-col items-start justify-start gap-[16px]">
+      <div class="w-[1046px] flex flex-row items-center justify-between">
+        <%- include('../../components/molecule/profile-info') %> <%- include('../../components/molecule/profile-info') %> <%-
+        include('../../components/molecule/profile-info') %>
+      </div>
+      <div class="w-[1046px] flex flex-row items-center justify-between mt-10">
+        <%- include('../../components/molecule/profile-info') %> <%- include('../../components/molecule/profile-info') %> <%-
+        include('../../components/molecule/profile-info') %>
+      </div>
+    </div>
+    <div
+      class="rounded-31xl bg-secondary-light w-[103px] h-[26px] flex flex-row py-2 px-[46px] box-border items-center justify-center text-secondary">
+      <div class="relative">Load more</div>
+    </div>
+  </div>
+</div>
