@@ -1,0 +1,42 @@
+<% crdText = crdText; imgSrc = imgSrc; imgSrc1 = imgSrc1; imgSrc2 = imgSrc2; imgSrc3 = imgSrc3; imgSrc4 = imgSrc4; %>
+<div class="rounded-3xs overflow-hidden flex flex-col pt-4 px-0 pb-0 items-center justify-start gap-[16px] border-2 border-gray-400 rounded-lg">
+    <div class="w-[271px] flex flex-row items-center justify-between">
+      <div class="flex flex-row items-center justify-start gap-[16px]">
+        <a href="/profile-info">
+            <img class="relative rounded-lg w-[45px] h-[45px] object-cover" alt="" src="<%= imgSrc %>" />
+        </a>
+
+        <div class="flex flex-col items-start justify-start gap-[8px]">
+          <div class="relative font-semibold text-sm">Owned By</div>
+          <div class="relative font-semibold"><%= crdText %></div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg flex flex-row py-[7px] px-[9px] items-center justify-center text-secondary border-[0.2px] border-solid border-secondary">
+        <div class="relative">Following</div>
+      </div>
+    </div>
+    <div class="relative w-[300px] h-48">
+        <a href="/item-details">
+            <img
+              class="rounded-lg absolute top-[0px] left-[0px] rounded-3xs w-[146px] h-48 overflow-hidden object-cover"
+              alt=""
+              src="<%= imgSrc1 %>" />
+        </a>
+        <a href="/item-details">
+            <img
+              class="rounded-lg absolute top-[68px] left-[154px] rounded-3xs w-[146px] h-[124px] overflow-hidden object-cover"
+              alt=""
+              src="<%= imgSrc2 %>" />
+        </a>
+
+      <div class="absolute top-[0px] left-[154px] w-[146px] h-16 flex flex-row items-center justify-between">
+        <a href="/item-details">
+            <img class=" rounded-lg relative rounded-3xs w-[70px] h-16 overflow-hidden shrink-0 object-cover" alt="" src="<%= imgSrc3 %>" />            
+        </a>
+        <a href="/item-details">
+            <img class="rounded-lg relative rounded-3xs w-[70px] h-16 overflow-hidden shrink-0 object-cover" alt="" src="<%= imgSrc4 %>" />            
+        </a>
+      </div>
+    </div>
+  </div>
