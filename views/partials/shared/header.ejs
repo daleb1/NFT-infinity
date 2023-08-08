@@ -200,7 +200,7 @@
     </div>
     <div class="hidden lg:flex lg:gap-x-6">
       <div x-data="{ open: false, timeout: null }" class="relative">
-        <a href="/profile">
+        <a href="/profile-info">
           <button
             @mouseenter="open = true"
             @mouseleave="timeout = setTimeout(() => open = false, 100)"
@@ -232,7 +232,7 @@
           >
     
           <a
-            href="/profile"
+            href="/profile-info"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Profile</a
           >
@@ -249,6 +249,20 @@
             >Logout</a
           >
         </div>
+      </div>
+    </div>
+    <div class="hidden lg:flex lg:gap-x-6">
+      <div x-data="{ open: false, timeout: null }" class="relative">
+        <a href="/help-center">
+          <button
+            @mouseenter="open = true"
+            @mouseleave="timeout = setTimeout(() => open = false, 100)"
+            type="button"
+            class="hover flex items-center gap-x-1 text-base font-semibold leading-6 text-white hover:underline hover:decoration-nft-gold-primary hover:decoration-4"
+            aria-expanded="false">
+            Contacts
+          </button>
+        </a>
       </div>
     </div>
 
@@ -699,7 +713,7 @@
                 class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 aria-controls="disclosure-2"
                 aria-expanded="false">
-                About
+                Account
                 <!-- Expand/collapse icon, toggle classes based on menu open state. Open: "rotate-180", Closed: "" -->
                 <svg
                   class="h-5 w-5 flex-none"
@@ -742,6 +756,16 @@
                   >Logout</a
                 >
               </div>
+            </div>
+            <div x-data="{ open: false }" class="-mx-3">
+              <button
+                @click="open = true"
+                type="button"
+                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50"
+                aria-controls="disclosure-2"
+                aria-expanded="false">
+                Contacts
+              </button>
             </div>
             <div class="-mx-3">
               <button
