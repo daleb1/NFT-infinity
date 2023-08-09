@@ -1,23 +1,38 @@
 <% title = "Home" %>
-<!-- HERO -->
-<%- include('../../components/molecule/hero'); %>
 
-<!-- BROWSE BY CATEGORY -->
-<%- include('../../components/molecule/browse-cat-section'); %>
+<section>
+  <!-- HERO -->
+  <%- include('../../components/molecule/hero'); %>
+</section>
 
+<section class="container mx-auto animate-fade-up">
+  <!-- BROWSE BY CATEGORY -->
+  <%- include('../../components/molecule/browse-cat-section'); %>
+</section>
+
+<section class="container mx-auto">
 <!-- LIVE AUCTION -->
 <%- include('../../components/molecule/live-auction'); %>
+</section>
 
+
+<section class="container mx-auto">
 <!-- TOP SELLERS -->
 <%- include('../../components/molecule/top-seller'); %>
+</section>
+
 
 <!-- TODAY'S PICK -->
 
+<section class="container mx-auto">
 <!-- POPULAR SECTION -->
 <%- include('../../components/molecule/popular-section'); %>
+</section>
+
 
 <!-- Add Remaining Section here-->
 
+<section class="container mx-auto">
 <!-- cta-card6 -->
 <div class="bg-white mb-20 sm:py-10">
   <div class="mx-auto max-w-7xl px-6 xl:px-8">
@@ -116,3 +131,4 @@
     </div>
   </div>
 </div>
+</section>

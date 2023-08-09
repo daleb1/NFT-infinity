@@ -2,6 +2,8 @@
 module.exports = {
   content: ["./views/**/*.ejs"],
   theme: {
+    safelist: ['animate-[fade-in-up_1s_ease-in-out]',
+    'animate-[fade-in-down_1s_ease-in-out]'],
     extend: {
       colors: {
         "nft-gold": {
@@ -9,6 +11,7 @@ module.exports = {
           secondary: "#FFFDD0",
           accent: "#F0E130",
           background: "#FFFFFF",
+          primaryDark: "#14141F",
         },
       },
       fontFamily: {
@@ -22,5 +25,9 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
+  ],
+  // ...
+  plugins: [
+    require('tailwindcss-animated')
   ],
 };
