@@ -823,6 +823,9 @@ video {
 .mt-2\.5 {
   margin-top: 0.625rem;
 }
+.mr-28 {
+  margin-right: 7rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -996,6 +999,9 @@ video {
 }
 .h-64 {
   height: 16rem;
+}
+.h-\[1307px\] {
+  height: 1307px;
 }
 .min-h-full {
   min-height: 100%;
