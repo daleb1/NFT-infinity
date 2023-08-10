@@ -1,206 +1,208 @@
 <% title = "Create Item" %>
-<div class="bg-white">
-  <div class="bg-gray-900 pt-24 sm:pt-32 pb-4">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="min-w-0 flex-wrap md:px-8 lg:px-0 xl:col-span-6 mt-5 items-center justify-center">
-        <div class="max-w-2xl lg:text-center">
-          <p class="mt-16 text-3xl font-bold tracking-tight text-white sm:text-4xl text-left">Create the best NFT</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="mx-auto max-w-2xl px-4 py-5 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-5">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">  
-      <div class="grid grid-cols-2 col-span-1 gap-x-8 md:grid-cols-3">
-        <div
-          class="flex flex-col pt-0 px-0 pb-4 items-center justify-start gap-[16px]">
-          <p class="text-right">Preview Item</p>
-          <%- include('../../components/atom/live-auction-2'); %>
-                <%- include('../../components/atom/live-auction-1',
-                { imgSrc: "../../assets/images/profile-thumbnail/dale.png"}); %>
-        </div>
-        
-      
-        
-    
-        <form class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
-          <div class="px-4 py-6 sm:p-8">
-            <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-              <!--Upload File-->
-              <div class="col-span-full">
-                <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>
-                <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                  <div class="text-center">
-                    <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
-                    </svg>
-                    <div class="mt-4 flex text-sm leading-6 text-gray-600">
-                      <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                        <span>Upload a file</span>
-                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                      </label>
-                      <p class="pl-1">or drag and drop</p>
-                    </div>
-                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-                  </div>
-                </div>
-              </div>
-              <!--Select Method-->
-              <div class="items-center content-center justify-between gap-x-10 col-span-full">
-                <div class="w-96 h-20 flex-col justify-start items-start gap-6 inline-flex">
-                  <div class="text-black text-lg font-bold">Select Method</div>
-                    <div class="justify-start items-start gap-3.5 inline-flex">
-                      <div x-data="{ open: false }" class="relative inline-block text-left">
-                        <div>
-                          <button @click="open = !open" type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                            Options
-                            <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                            </svg>
-                          </button>
-                        </div>
-                      
-                        <!--
-                          Dropdown menu, show/hide based on menu state.
-                      
-                          Entering: "transition ease-out duration-100"
-                            From: "transform opacity-0 scale-95"
-                            To: "transform opacity-100 scale-100"
-                          Leaving: "transition ease-in duration-75"
-                            From: "transform opacity-100 scale-100"
-                            To: "transform opacity-0 scale-95"
-                        -->
-                        <div x-show="open" @click.away="open = false" class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                          <div class="py-1" role="none">
-                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm gap-x-3" role="menuitem" tabindex="-1" id="menu-item-0">
-                              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="black"/>
-                              </svg>                                
-                              Fixed Price
-                            </a>
-                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm gap-x-3" role="menuitem" tabindex="-1" id="menu-item-0">
-                              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 6.72501H4.6375C4.14282 6.70713 3.64974 6.79111 3.18886 6.97174C2.72798 7.15236 2.30914 7.42578 1.95834 7.77501L1.85834 7.89168V11.3417H3.55834V9.38335L3.7875 9.12501L3.89167 9.00418C4.43414 8.44689 5.1095 8.0368 5.85417 7.81251C5.48134 7.52882 5.18729 7.15445 5 6.72501Z" fill="black"/>
-                                <path d="M13.0583 7.76232C12.7075 7.41308 12.2887 7.13967 11.8278 6.95904C11.3669 6.77842 10.8739 6.69444 10.3792 6.71232C10.2275 6.71275 10.0759 6.72109 9.92501 6.73732C9.73421 7.14019 9.4482 7.49056 9.09167 7.75815C9.88667 7.97809 10.6068 8.41019 11.175 9.00815L11.2792 9.12482L11.5042 9.38315V11.3457H13.1458V7.87898L13.0583 7.76232Z" fill="black"/>
-                                <path d="M4.62501 5.91266H4.75417C4.69416 5.39735 4.78458 4.87568 5.01452 4.41062C5.24446 3.94556 5.60409 3.557 6.05001 3.29183C5.88837 3.04489 5.66537 2.84417 5.40284 2.70931C5.14032 2.57445 4.84727 2.51008 4.5524 2.52251C4.25752 2.53493 3.97093 2.62373 3.72068 2.7802C3.47044 2.93666 3.26511 3.15544 3.12482 3.4151C2.98453 3.67476 2.91408 3.96641 2.92037 4.26148C2.92666 4.55655 3.00947 4.84492 3.1607 5.09837C3.31193 5.35182 3.52638 5.56165 3.78307 5.70731C4.03976 5.85298 4.32987 5.92948 4.62501 5.92933V5.91266Z" fill="black"/>
-                                <path d="M10.1792 5.60002C10.1843 5.69579 10.1843 5.79176 10.1792 5.88752C10.2592 5.9002 10.3399 5.90716 10.4209 5.90836H10.5C10.7939 5.89269 11.0786 5.8012 11.3266 5.64281C11.5746 5.48441 11.7774 5.2645 11.9151 5.00449C12.0529 4.74448 12.121 4.45322 12.1128 4.15908C12.1046 3.86494 12.0204 3.57793 11.8683 3.32601C11.7163 3.07408 11.5016 2.86582 11.2451 2.72149C10.9887 2.57717 10.6993 2.50171 10.405 2.50245C10.1107 2.50319 9.8217 2.58011 9.56599 2.72572C9.31029 2.87133 9.09665 3.08067 8.94586 3.33336C9.32298 3.57958 9.63308 3.91557 9.84834 4.31118C10.0636 4.70679 10.1773 5.14965 10.1792 5.60002Z" fill="black"/>
-                                <path d="M7.44581 7.4667C8.47444 7.4667 9.30831 6.63283 9.30831 5.6042C9.30831 4.57557 8.47444 3.7417 7.44581 3.7417C6.41718 3.7417 5.58331 4.57557 5.58331 5.6042C5.58331 6.63283 6.41718 7.4667 7.44581 7.4667Z" fill="black"/>
-                                <path d="M7.54585 8.45832C7.00171 8.43635 6.45874 8.5247 5.94962 8.71803C5.4405 8.91137 4.97576 9.2057 4.58335 9.58332L4.47919 9.69999V12.3375C4.48081 12.4234 4.49935 12.5082 4.53373 12.5869C4.56812 12.6656 4.61768 12.7368 4.67959 12.7964C4.7415 12.856 4.81454 12.9028 4.89455 12.9342C4.97455 12.9655 5.05994 12.9808 5.14585 12.9792H9.93335C10.0193 12.9808 10.1047 12.9655 10.1847 12.9342C10.2647 12.9028 10.3377 12.856 10.3996 12.7964C10.4615 12.7368 10.5111 12.6656 10.5455 12.5869C10.5799 12.5082 10.5984 12.4234 10.6 12.3375V9.70832L10.5 9.58332C10.1102 9.20454 9.64703 8.90938 9.13905 8.71593C8.63106 8.52248 8.08892 8.43482 7.54585 8.45832Z" fill="black"/>
-                              </svg>                                  
-                              Time Auction
-                            </a>
-                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm gap-x-3" role="menuitem" tabindex="-1" id="menu-item-0">
-                              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 7.5C1.25 4.04813 4.04813 1.25 7.5 1.25C10.9519 1.25 13.75 4.04813 13.75 7.5C13.75 10.9519 10.9519 13.75 7.5 13.75C4.04813 13.75 1.25 10.9519 1.25 7.5ZM8.125 4.375C8.125 4.20924 8.05915 4.05027 7.94194 3.93306C7.82473 3.81585 7.66576 3.75 7.5 3.75C7.33424 3.75 7.17527 3.81585 7.05806 3.93306C6.94085 4.05027 6.875 4.20924 6.875 4.375V6.7275C6.87501 7.07566 6.97196 7.41693 7.15498 7.7131C7.338 8.00927 7.59987 8.24863 7.91125 8.40437L9.72062 9.30875C9.7943 9.34848 9.8752 9.373 9.95853 9.38087C10.0419 9.38874 10.1259 9.37979 10.2057 9.35455C10.2855 9.32931 10.3595 9.2883 10.4231 9.23395C10.4868 9.17959 10.5389 9.11301 10.5763 9.03815C10.6137 8.96328 10.6357 8.88166 10.641 8.79812C10.6463 8.71459 10.6348 8.63084 10.6071 8.55186C10.5794 8.47287 10.5361 8.40025 10.4798 8.3383C10.4235 8.27636 10.3554 8.22635 10.2794 8.19125L8.47063 7.28625C8.36682 7.23438 8.27951 7.15464 8.21847 7.05595C8.15743 6.95727 8.12506 6.84354 8.125 6.7275V4.375Z" fill="black"/>
-                              </svg>                                                                
-                              Open for Bids
-                            </a>
-                            
-                          </div>
-                        </div>
-                      </div>
-                      
-        
-                      <!-- <button class="w-52 h-10 px-11 py-1.5 bg-violet-200 rounded justify-center items-center gap-4 inline-flex gap-x-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        <div class="w-3.5 h-3.5 relative">
-                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="#79279F"/>
-                          </svg>  
-                        </div>
-                        <div class="text-purple-800 text-xs font-normal">Fixed Price</div>
-                      </button>
-                      <button class="w-52 h-10 px-11 py-1.5 bg-violet-200 rounded justify-center items-center gap-4 inline-flex gap-x-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        <div class="w-3.5 h-3.5 relative">
-                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="#79279F"/>
-                          </svg>  
-                        </div>
-                        <div class="text-purple-800 text-xs font-normal">Fixed Price</div>
-                      </button>
-                      <button class="w-52 h-10 px-11 py-1.5 bg-violet-200 rounded justify-center items-center gap-4 inline-flex gap-x-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        <div class="w-3.5 h-3.5 relative">
-                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="#79279F"/>
-                          </svg>  
-                        </div>
-                        <div class="text-purple-800 text-xs font-normal">Fixed Price</div>
-                      </button> -->
-                      <!-- <button class="w-52 h-10 px-11 py-1.5 bg-gray-200 rounded justify-center items-center gap-4 inline-flex">
-                        <div class="w-3.5 h-3.5 relative">
-                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 6.72501H4.6375C4.14282 6.70713 3.64974 6.79111 3.18886 6.97174C2.72798 7.15236 2.30914 7.42578 1.95834 7.77501L1.85834 7.89168V11.3417H3.55834V9.38335L3.7875 9.12501L3.89167 9.00418C4.43414 8.44689 5.1095 8.0368 5.85417 7.81251C5.48134 7.52882 5.18729 7.15445 5 6.72501Z" fill="black" fill-opacity="0.5"/>
-                            <path d="M13.0583 7.76232C12.7075 7.41308 12.2887 7.13967 11.8278 6.95904C11.3669 6.77842 10.8739 6.69444 10.3792 6.71232C10.2275 6.71275 10.0759 6.72109 9.92501 6.73732C9.73421 7.14019 9.4482 7.49056 9.09167 7.75815C9.88667 7.97809 10.6068 8.41019 11.175 9.00815L11.2792 9.12482L11.5042 9.38315V11.3457H13.1458V7.87898L13.0583 7.76232Z" fill="black" fill-opacity="0.5"/>
-                            <path d="M4.62501 5.91266H4.75417C4.69416 5.39735 4.78458 4.87568 5.01452 4.41062C5.24446 3.94556 5.60409 3.557 6.05001 3.29183C5.88837 3.04489 5.66537 2.84417 5.40284 2.70931C5.14032 2.57445 4.84727 2.51008 4.5524 2.52251C4.25752 2.53493 3.97093 2.62373 3.72068 2.7802C3.47044 2.93666 3.26511 3.15544 3.12482 3.4151C2.98453 3.67476 2.91408 3.96641 2.92037 4.26148C2.92666 4.55655 3.00947 4.84492 3.1607 5.09837C3.31193 5.35182 3.52638 5.56165 3.78307 5.70731C4.03976 5.85298 4.32987 5.92948 4.62501 5.92933V5.91266Z" fill="black" fill-opacity="0.5"/>
-                            <path d="M10.1792 5.60002C10.1843 5.69579 10.1843 5.79176 10.1792 5.88752C10.2592 5.9002 10.3399 5.90716 10.4209 5.90836H10.5C10.7939 5.89269 11.0786 5.8012 11.3266 5.64281C11.5746 5.48441 11.7774 5.2645 11.9151 5.00449C12.0529 4.74448 12.121 4.45322 12.1128 4.15908C12.1046 3.86494 12.0204 3.57793 11.8683 3.32601C11.7163 3.07408 11.5016 2.86582 11.2451 2.72149C10.9887 2.57717 10.6993 2.50171 10.405 2.50245C10.1107 2.50319 9.8217 2.58011 9.56599 2.72572C9.31029 2.87133 9.09665 3.08067 8.94586 3.33336C9.32298 3.57958 9.63308 3.91557 9.84834 4.31118C10.0636 4.70679 10.1773 5.14965 10.1792 5.60002Z" fill="black" fill-opacity="0.5"/>
-                            <path d="M7.44581 7.4667C8.47444 7.4667 9.30831 6.63283 9.30831 5.6042C9.30831 4.57557 8.47444 3.7417 7.44581 3.7417C6.41718 3.7417 5.58331 4.57557 5.58331 5.6042C5.58331 6.63283 6.41718 7.4667 7.44581 7.4667Z" fill="black" fill-opacity="0.5"/>
-                            <path d="M7.54585 8.45832C7.00171 8.43635 6.45874 8.5247 5.94962 8.71803C5.4405 8.91137 4.97576 9.2057 4.58335 9.58332L4.47919 9.69999V12.3375C4.48081 12.4234 4.49935 12.5082 4.53373 12.5869C4.56812 12.6656 4.61768 12.7368 4.67959 12.7964C4.7415 12.856 4.81454 12.9028 4.89455 12.9342C4.97455 12.9655 5.05994 12.9808 5.14585 12.9792H9.93335C10.0193 12.9808 10.1047 12.9655 10.1847 12.9342C10.2647 12.9028 10.3377 12.856 10.3996 12.7964C10.4615 12.7368 10.5111 12.6656 10.5455 12.5869C10.5799 12.5082 10.5984 12.4234 10.6 12.3375V9.70832L10.5 9.58332C10.1102 9.20454 9.64703 8.90938 9.13905 8.71593C8.63106 8.52248 8.08892 8.43482 7.54585 8.45832Z" fill="black" fill-opacity="0.5"/>
-                          </svg>  
-                        </div>
-                        <div class="text-black text-opacity-50 text-xs font-normal">Time Auctions</div>
-                      </button>
-                      <button class="w-52 h-10 px-11 py-1.5 bg-gray-200 rounded justify-center items-center gap-4 inline-flex">
-                        <div class="w-3.5 h-3.5 relative">
-                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 7.5C1.25 4.04813 4.04813 1.25 7.5 1.25C10.9519 1.25 13.75 4.04813 13.75 7.5C13.75 10.9519 10.9519 13.75 7.5 13.75C4.04813 13.75 1.25 10.9519 1.25 7.5ZM8.125 4.375C8.125 4.20924 8.05915 4.05027 7.94194 3.93306C7.82473 3.81585 7.66576 3.75 7.5 3.75C7.33424 3.75 7.17527 3.81585 7.05806 3.93306C6.94085 4.05027 6.875 4.20924 6.875 4.375V6.7275C6.87501 7.07566 6.97196 7.41693 7.15498 7.7131C7.338 8.00927 7.59987 8.24863 7.91125 8.40437L9.72062 9.30875C9.7943 9.34848 9.8752 9.373 9.95853 9.38087C10.0419 9.38874 10.1259 9.37979 10.2057 9.35455C10.2855 9.32931 10.3595 9.2883 10.4231 9.23395C10.4868 9.17959 10.5389 9.11301 10.5763 9.03815C10.6137 8.96328 10.6357 8.88166 10.641 8.79812C10.6463 8.71459 10.6348 8.63084 10.6071 8.55186C10.5794 8.47287 10.5361 8.40025 10.4798 8.3383C10.4235 8.27636 10.3554 8.22635 10.2794 8.19125L8.47063 7.28625C8.36682 7.23438 8.27951 7.15464 8.21847 7.05595C8.15743 6.95727 8.12506 6.84354 8.125 6.7275V4.375Z" fill="black" fill-opacity="0.5"/>
-                          </svg>         
-                        </div>
-                        <div class="text-black text-opacity-50 text-xs font-normal">Open for Bids</div>
-                      </button> -->
-                    </div>
-                </div>  
-              </div>
-              <!--Field-->
-              <div class="col-span-full">
-                <label for="bid" class="block text-sm font-medium leading-6 text-gray-900">Bid</label>
-                <div class="mt-2">
-                  <input type="text" name="bid" id="bid" autocomplete="bid" placeholder="e.g. 14 ETH" class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                </div>
-              </div>
-              <!--Title-->
-              <div class="col-span-full">
-                <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
-                <div class="mt-2">
-                  <input type="text" name="title" id="title" autocomplete="title" placeholder="Write your desired title..." class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                </div>
-              </div>
-              <!--Description-->
-              <div class="col-span-full">
-                <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
-                <div class="mt-2">
-                  <textarea id="description" name="description" rows="3" placeholder="Write your brief description about your NFT..." class="pl-3 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
-                </div>
-              </div>
-              <!--Royalities-->
-              <div class="sm:col-span-3 sm:col-start-1">
-                <label for="royalities" class="block text-sm font-medium leading-6 text-gray-900">Royalities</label>
-                <div class="mt-2">
-                  <input type="text" name="royalities" id="royalities" autocomplete="royalities" placeholder="Input your desired royalities..." class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                </div>
-              </div>
-              <!--Size-->
-              <div class="sm:col-span-3">
-                <label for="size" class="block text-sm font-medium leading-6 text-gray-900">Size</label>
-                <div class="mt-2">
-                  <input type="text" name="size" id="size" autocomplete="size" placeholder="Input the size of NFT e.g. 200x300" class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                </div>
-              </div>
-              
-              <div class="text-center ml-72">
-                <div class="mt-10 flex items-center justify-start mx-auto">
-                  <button
-                    class="border-2 border-nft-gold-primary hover:bg-nft-gold-primary text-black hover:text-black font-black px-12 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    Create
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </form>
+<div class="bg-gray-900 pb-4 sm:pt-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 animate animate-fade-up">
+    <div class="min-w-0 flex-wrap md:px-8 lg:px-0 xl:col-span-6 mt-5 items-center justify-center">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Connect Your Wallet</p>
+        <p class="mt-6 text-lg leading-2 text-gray-300"> Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.</p>
       </div>
     </div>
   </div>
 </div>
+<section>
+  <div class="bg-white">
+    <div class="bg-gray-900 pt-24 sm:pt-32 pb-4">
+    </div>
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+        <!-- Preview Item -->
+        <div
+        class="flex flex-col pt-0 px-0 pb-4 items-center justify-start gap-[16px]">
+        <p class="font-bold text-2xl">Preview Item</p>
+        <%- include('../../components/atom/live-auction-2'); %>
+              <%- include('../../components/atom/live-auction-1',
+              { imgSrc: "../../assets/images/profile-thumbnail/dale.png"}); %>
+        </div>
+        
+        <!-- Product info -->
+        <div class="px-4 py-6 sm:p-8">
+          <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <!--Upload File-->
+            <div class="col-span-full">
+              <p class="font-bold text-2xl mb-5">Create Listing</p>
+              <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>
+              <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                <div class="text-center">
+                  <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                  </svg>
+                  <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                    <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                      <span>Upload a file</span>
+                      <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                    </label>
+                    <p class="pl-1">or drag and drop</p>
+                  </div>
+                  <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                </div>
+              </div>
+            </div>
+            <!--Select Method-->
+            <div class="items-center content-center justify-between gap-x-10 col-span-full">
+              <div class="w-96 h-20 flex-col justify-start items-start gap-6 inline-flex">
+                <div class="text-black text-lg font-bold">Select Method</div>
+                  <div class="justify-start items-start gap-3.5 inline-flex">
+                    <div x-data="{ open: false }" class="relative inline-block text-left">
+                      <div>
+                        <button @click="open = !open" type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                          Options
+                          <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                          </svg>
+                        </button>
+                      </div>
+                    
+                      <!--
+                        Dropdown menu, show/hide based on menu state.
+                    
+                        Entering: "transition ease-out duration-100"
+                          From: "transform opacity-0 scale-95"
+                          To: "transform opacity-100 scale-100"
+                        Leaving: "transition ease-in duration-75"
+                          From: "transform opacity-100 scale-100"
+                          To: "transform opacity-0 scale-95"
+                      -->
+                      <div x-show="open" @click.away="open = false" class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <div class="py-1" role="none">
+                          <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                          <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm gap-x-3" role="menuitem" tabindex="-1" id="menu-item-0">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="black"/>
+                            </svg>                                
+                            Fixed Price
+                          </a>
+                          <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm gap-x-3" role="menuitem" tabindex="-1" id="menu-item-0">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 6.72501H4.6375C4.14282 6.70713 3.64974 6.79111 3.18886 6.97174C2.72798 7.15236 2.30914 7.42578 1.95834 7.77501L1.85834 7.89168V11.3417H3.55834V9.38335L3.7875 9.12501L3.89167 9.00418C4.43414 8.44689 5.1095 8.0368 5.85417 7.81251C5.48134 7.52882 5.18729 7.15445 5 6.72501Z" fill="black"/>
+                              <path d="M13.0583 7.76232C12.7075 7.41308 12.2887 7.13967 11.8278 6.95904C11.3669 6.77842 10.8739 6.69444 10.3792 6.71232C10.2275 6.71275 10.0759 6.72109 9.92501 6.73732C9.73421 7.14019 9.4482 7.49056 9.09167 7.75815C9.88667 7.97809 10.6068 8.41019 11.175 9.00815L11.2792 9.12482L11.5042 9.38315V11.3457H13.1458V7.87898L13.0583 7.76232Z" fill="black"/>
+                              <path d="M4.62501 5.91266H4.75417C4.69416 5.39735 4.78458 4.87568 5.01452 4.41062C5.24446 3.94556 5.60409 3.557 6.05001 3.29183C5.88837 3.04489 5.66537 2.84417 5.40284 2.70931C5.14032 2.57445 4.84727 2.51008 4.5524 2.52251C4.25752 2.53493 3.97093 2.62373 3.72068 2.7802C3.47044 2.93666 3.26511 3.15544 3.12482 3.4151C2.98453 3.67476 2.91408 3.96641 2.92037 4.26148C2.92666 4.55655 3.00947 4.84492 3.1607 5.09837C3.31193 5.35182 3.52638 5.56165 3.78307 5.70731C4.03976 5.85298 4.32987 5.92948 4.62501 5.92933V5.91266Z" fill="black"/>
+                              <path d="M10.1792 5.60002C10.1843 5.69579 10.1843 5.79176 10.1792 5.88752C10.2592 5.9002 10.3399 5.90716 10.4209 5.90836H10.5C10.7939 5.89269 11.0786 5.8012 11.3266 5.64281C11.5746 5.48441 11.7774 5.2645 11.9151 5.00449C12.0529 4.74448 12.121 4.45322 12.1128 4.15908C12.1046 3.86494 12.0204 3.57793 11.8683 3.32601C11.7163 3.07408 11.5016 2.86582 11.2451 2.72149C10.9887 2.57717 10.6993 2.50171 10.405 2.50245C10.1107 2.50319 9.8217 2.58011 9.56599 2.72572C9.31029 2.87133 9.09665 3.08067 8.94586 3.33336C9.32298 3.57958 9.63308 3.91557 9.84834 4.31118C10.0636 4.70679 10.1773 5.14965 10.1792 5.60002Z" fill="black"/>
+                              <path d="M7.44581 7.4667C8.47444 7.4667 9.30831 6.63283 9.30831 5.6042C9.30831 4.57557 8.47444 3.7417 7.44581 3.7417C6.41718 3.7417 5.58331 4.57557 5.58331 5.6042C5.58331 6.63283 6.41718 7.4667 7.44581 7.4667Z" fill="black"/>
+                              <path d="M7.54585 8.45832C7.00171 8.43635 6.45874 8.5247 5.94962 8.71803C5.4405 8.91137 4.97576 9.2057 4.58335 9.58332L4.47919 9.69999V12.3375C4.48081 12.4234 4.49935 12.5082 4.53373 12.5869C4.56812 12.6656 4.61768 12.7368 4.67959 12.7964C4.7415 12.856 4.81454 12.9028 4.89455 12.9342C4.97455 12.9655 5.05994 12.9808 5.14585 12.9792H9.93335C10.0193 12.9808 10.1047 12.9655 10.1847 12.9342C10.2647 12.9028 10.3377 12.856 10.3996 12.7964C10.4615 12.7368 10.5111 12.6656 10.5455 12.5869C10.5799 12.5082 10.5984 12.4234 10.6 12.3375V9.70832L10.5 9.58332C10.1102 9.20454 9.64703 8.90938 9.13905 8.71593C8.63106 8.52248 8.08892 8.43482 7.54585 8.45832Z" fill="black"/>
+                            </svg>                                  
+                            Time Auction
+                          </a>
+                          <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm gap-x-3" role="menuitem" tabindex="-1" id="menu-item-0">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 7.5C1.25 4.04813 4.04813 1.25 7.5 1.25C10.9519 1.25 13.75 4.04813 13.75 7.5C13.75 10.9519 10.9519 13.75 7.5 13.75C4.04813 13.75 1.25 10.9519 1.25 7.5ZM8.125 4.375C8.125 4.20924 8.05915 4.05027 7.94194 3.93306C7.82473 3.81585 7.66576 3.75 7.5 3.75C7.33424 3.75 7.17527 3.81585 7.05806 3.93306C6.94085 4.05027 6.875 4.20924 6.875 4.375V6.7275C6.87501 7.07566 6.97196 7.41693 7.15498 7.7131C7.338 8.00927 7.59987 8.24863 7.91125 8.40437L9.72062 9.30875C9.7943 9.34848 9.8752 9.373 9.95853 9.38087C10.0419 9.38874 10.1259 9.37979 10.2057 9.35455C10.2855 9.32931 10.3595 9.2883 10.4231 9.23395C10.4868 9.17959 10.5389 9.11301 10.5763 9.03815C10.6137 8.96328 10.6357 8.88166 10.641 8.79812C10.6463 8.71459 10.6348 8.63084 10.6071 8.55186C10.5794 8.47287 10.5361 8.40025 10.4798 8.3383C10.4235 8.27636 10.3554 8.22635 10.2794 8.19125L8.47063 7.28625C8.36682 7.23438 8.27951 7.15464 8.21847 7.05595C8.15743 6.95727 8.12506 6.84354 8.125 6.7275V4.375Z" fill="black"/>
+                            </svg>                                                                
+                            Open for Bids
+                          </a>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    
+      
+                    <!-- <button class="w-52 h-10 px-11 py-1.5 bg-violet-200 rounded justify-center items-center gap-4 inline-flex gap-x-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      <div class="w-3.5 h-3.5 relative">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="#79279F"/>
+                        </svg>  
+                      </div>
+                      <div class="text-purple-800 text-xs font-normal">Fixed Price</div>
+                    </button>
+                    <button class="w-52 h-10 px-11 py-1.5 bg-violet-200 rounded justify-center items-center gap-4 inline-flex gap-x-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      <div class="w-3.5 h-3.5 relative">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="#79279F"/>
+                        </svg>  
+                      </div>
+                      <div class="text-purple-800 text-xs font-normal">Fixed Price</div>
+                    </button>
+                    <button class="w-52 h-10 px-11 py-1.5 bg-violet-200 rounded justify-center items-center gap-4 inline-flex gap-x-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      <div class="w-3.5 h-3.5 relative">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.24902 0H2.49902C1.11914 0 0 1.11914 0 2.49902V6.24902L8.75098 15L15 8.75098L6.24902 0ZM2.49902 3.75C1.80762 3.75 1.24805 3.19043 1.24805 2.49902C1.24805 1.80762 1.80762 1.24805 2.49902 1.24805C3.19043 1.24805 3.75 1.81055 3.75 2.49902C3.75 3.1875 3.19043 3.75 2.49902 3.75Z" fill="#79279F"/>
+                        </svg>  
+                      </div>
+                      <div class="text-purple-800 text-xs font-normal">Fixed Price</div>
+                    </button> -->
+                    <!-- <button class="w-52 h-10 px-11 py-1.5 bg-gray-200 rounded justify-center items-center gap-4 inline-flex">
+                      <div class="w-3.5 h-3.5 relative">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 6.72501H4.6375C4.14282 6.70713 3.64974 6.79111 3.18886 6.97174C2.72798 7.15236 2.30914 7.42578 1.95834 7.77501L1.85834 7.89168V11.3417H3.55834V9.38335L3.7875 9.12501L3.89167 9.00418C4.43414 8.44689 5.1095 8.0368 5.85417 7.81251C5.48134 7.52882 5.18729 7.15445 5 6.72501Z" fill="black" fill-opacity="0.5"/>
+                          <path d="M13.0583 7.76232C12.7075 7.41308 12.2887 7.13967 11.8278 6.95904C11.3669 6.77842 10.8739 6.69444 10.3792 6.71232C10.2275 6.71275 10.0759 6.72109 9.92501 6.73732C9.73421 7.14019 9.4482 7.49056 9.09167 7.75815C9.88667 7.97809 10.6068 8.41019 11.175 9.00815L11.2792 9.12482L11.5042 9.38315V11.3457H13.1458V7.87898L13.0583 7.76232Z" fill="black" fill-opacity="0.5"/>
+                          <path d="M4.62501 5.91266H4.75417C4.69416 5.39735 4.78458 4.87568 5.01452 4.41062C5.24446 3.94556 5.60409 3.557 6.05001 3.29183C5.88837 3.04489 5.66537 2.84417 5.40284 2.70931C5.14032 2.57445 4.84727 2.51008 4.5524 2.52251C4.25752 2.53493 3.97093 2.62373 3.72068 2.7802C3.47044 2.93666 3.26511 3.15544 3.12482 3.4151C2.98453 3.67476 2.91408 3.96641 2.92037 4.26148C2.92666 4.55655 3.00947 4.84492 3.1607 5.09837C3.31193 5.35182 3.52638 5.56165 3.78307 5.70731C4.03976 5.85298 4.32987 5.92948 4.62501 5.92933V5.91266Z" fill="black" fill-opacity="0.5"/>
+                          <path d="M10.1792 5.60002C10.1843 5.69579 10.1843 5.79176 10.1792 5.88752C10.2592 5.9002 10.3399 5.90716 10.4209 5.90836H10.5C10.7939 5.89269 11.0786 5.8012 11.3266 5.64281C11.5746 5.48441 11.7774 5.2645 11.9151 5.00449C12.0529 4.74448 12.121 4.45322 12.1128 4.15908C12.1046 3.86494 12.0204 3.57793 11.8683 3.32601C11.7163 3.07408 11.5016 2.86582 11.2451 2.72149C10.9887 2.57717 10.6993 2.50171 10.405 2.50245C10.1107 2.50319 9.8217 2.58011 9.56599 2.72572C9.31029 2.87133 9.09665 3.08067 8.94586 3.33336C9.32298 3.57958 9.63308 3.91557 9.84834 4.31118C10.0636 4.70679 10.1773 5.14965 10.1792 5.60002Z" fill="black" fill-opacity="0.5"/>
+                          <path d="M7.44581 7.4667C8.47444 7.4667 9.30831 6.63283 9.30831 5.6042C9.30831 4.57557 8.47444 3.7417 7.44581 3.7417C6.41718 3.7417 5.58331 4.57557 5.58331 5.6042C5.58331 6.63283 6.41718 7.4667 7.44581 7.4667Z" fill="black" fill-opacity="0.5"/>
+                          <path d="M7.54585 8.45832C7.00171 8.43635 6.45874 8.5247 5.94962 8.71803C5.4405 8.91137 4.97576 9.2057 4.58335 9.58332L4.47919 9.69999V12.3375C4.48081 12.4234 4.49935 12.5082 4.53373 12.5869C4.56812 12.6656 4.61768 12.7368 4.67959 12.7964C4.7415 12.856 4.81454 12.9028 4.89455 12.9342C4.97455 12.9655 5.05994 12.9808 5.14585 12.9792H9.93335C10.0193 12.9808 10.1047 12.9655 10.1847 12.9342C10.2647 12.9028 10.3377 12.856 10.3996 12.7964C10.4615 12.7368 10.5111 12.6656 10.5455 12.5869C10.5799 12.5082 10.5984 12.4234 10.6 12.3375V9.70832L10.5 9.58332C10.1102 9.20454 9.64703 8.90938 9.13905 8.71593C8.63106 8.52248 8.08892 8.43482 7.54585 8.45832Z" fill="black" fill-opacity="0.5"/>
+                        </svg>  
+                      </div>
+                      <div class="text-black text-opacity-50 text-xs font-normal">Time Auctions</div>
+                    </button>
+                    <button class="w-52 h-10 px-11 py-1.5 bg-gray-200 rounded justify-center items-center gap-4 inline-flex">
+                      <div class="w-3.5 h-3.5 relative">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 7.5C1.25 4.04813 4.04813 1.25 7.5 1.25C10.9519 1.25 13.75 4.04813 13.75 7.5C13.75 10.9519 10.9519 13.75 7.5 13.75C4.04813 13.75 1.25 10.9519 1.25 7.5ZM8.125 4.375C8.125 4.20924 8.05915 4.05027 7.94194 3.93306C7.82473 3.81585 7.66576 3.75 7.5 3.75C7.33424 3.75 7.17527 3.81585 7.05806 3.93306C6.94085 4.05027 6.875 4.20924 6.875 4.375V6.7275C6.87501 7.07566 6.97196 7.41693 7.15498 7.7131C7.338 8.00927 7.59987 8.24863 7.91125 8.40437L9.72062 9.30875C9.7943 9.34848 9.8752 9.373 9.95853 9.38087C10.0419 9.38874 10.1259 9.37979 10.2057 9.35455C10.2855 9.32931 10.3595 9.2883 10.4231 9.23395C10.4868 9.17959 10.5389 9.11301 10.5763 9.03815C10.6137 8.96328 10.6357 8.88166 10.641 8.79812C10.6463 8.71459 10.6348 8.63084 10.6071 8.55186C10.5794 8.47287 10.5361 8.40025 10.4798 8.3383C10.4235 8.27636 10.3554 8.22635 10.2794 8.19125L8.47063 7.28625C8.36682 7.23438 8.27951 7.15464 8.21847 7.05595C8.15743 6.95727 8.12506 6.84354 8.125 6.7275V4.375Z" fill="black" fill-opacity="0.5"/>
+                        </svg>         
+                      </div>
+                      <div class="text-black text-opacity-50 text-xs font-normal">Open for Bids</div>
+                    </button> -->
+                  </div>
+              </div>  
+            </div>
+            <!--Field-->
+            <div class="col-span-full">
+              <label for="bid" class="block text-sm font-medium leading-6 text-gray-900">Bid</label>
+              <div class="mt-2">
+                <input type="text" name="bid" id="bid" autocomplete="bid" placeholder="e.g. 14 ETH" class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <!--Title-->
+            <div class="col-span-full">
+              <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
+              <div class="mt-2">
+                <input type="text" name="title" id="title" autocomplete="title" placeholder="Write your desired title..." class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <!--Description-->
+            <div class="col-span-full">
+              <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+              <div class="mt-2">
+                <textarea id="description" name="description" rows="3" placeholder="Write your brief description about your NFT..." class="pl-3 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
+              </div>
+            </div>
+            <!--Royalities-->
+            <div class="sm:col-span-3 sm:col-start-1">
+              <label for="royalities" class="block text-sm font-medium leading-6 text-gray-900">Royalities</label>
+              <div class="mt-2">
+                <input type="text" name="royalities" id="royalities" autocomplete="royalities" placeholder="Input your desired royalities..." class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <!--Size-->
+            <div class="sm:col-span-3">
+              <label for="size" class="block text-sm font-medium leading-6 text-gray-900">Size</label>
+              <div class="mt-2">
+                <input type="text" name="size" id="size" autocomplete="size" placeholder="Input the size of NFT e.g. 200x300" class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <div class="justify-start">
+                <button
+                  class="border-2 border-nft-gold-primary hover:bg-nft-gold-primary text-black hover:text-black font-black px-12 py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  Create
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
