@@ -2245,6 +2245,12 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.delay-150 {
+  transition-delay: 150ms;
+}
+.delay-300 {
+  transition-delay: 300ms;
+}
 .duration-100 {
   transition-duration: 100ms;
 }
@@ -2259,6 +2265,9 @@ video {
 }
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @font-face {
