@@ -1961,6 +1961,12 @@ video {
 .align-middle {
   vertical-align: middle;
 }
+.font-pilbold {
+  font-family: Pilat Extended Bold;
+}
+.font-pilbook {
+  font-family: Pilat Extended Book;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
