@@ -1,13 +1,65 @@
-<% title = "Connect Wallet" %>
-<div class="bg-gray-900 pb-4 sm:pt-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 animate animate-fade-up">
+<% title = "Login" %>
+<div class="bg-gray-900 py-14 sm:py-14">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="min-w-0 flex-wrap md:px-8 lg:px-0 xl:col-span-6 mt-5 items-center justify-center">
       <div class="mx-auto max-w-2xl lg:text-center">
-        <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Connect Your Wallet</p>
-        <p class="mt-6 text-lg leading-2 text-gray-300"> Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.</p>
       </div>
     </div>
   </div>
-</div>
-<%- include('../../components/molecule/author-card6'); %>
+</div> 
+
+<section class=" dark:bg-gray-900 mt-1">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+     
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <a href="#" class="flex items-center justify-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+              <img class="w-10 h-10 mr-2" src="../../assets/images/logo-shadow-black.png" alt="logo">   
+          </a>
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-3xl dark:text-white text-center">
+                  Login To NFTs
+              </h1> 
+              <form class="space-y-4 md:space-y-6" action="#">
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                      <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+                  </div>
+                  <div>
+                      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                      <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                  </div> 
+                  <div class="flex items-center justify-between">
+                      <div class="flex items-start">
+                          <div class="flex items-center h-5">
+                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                          </div>
+                          <div class="ml-3 text-sm">
+                            <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                          </div>
+                      </div>
+                      <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                  </div>
+                  <button
+                  class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline rounded-xl"
+                  type="submit">Login</button>
+
+                  <div
+                  class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+                  <p
+                    class="mx-4 mb-0 text-center dark:text-white font-rubik text-sm">
+                    Login with social
+                  </p>
+                  </div>
+                  <button type="button" class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3.5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                    <svg class="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
+                    Connect with Google
+                    </button>
+                  <button type="button" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-3.5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2">
+                    <svg class="mr-2 -ml-1 w-2 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"></path></svg>
+                    Connect with Facebook
+                </button>    
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
